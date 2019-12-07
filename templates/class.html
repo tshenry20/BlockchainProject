@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<title>Blockchain Simulator</title>
+{% if name %}
+<h1>Hello {{ name }}, enter the details of the class</h1>
+{% endif %}
+
+<div class="row">
+    <form class="col s12" id="form" name="form" action="/" method="post">
+        <div class="row">
+            {% if not name %}
+            <div class="input-field col s12">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" value="">
+            </div>
+            {% endif %}
+            <div class="input-field col s12">
+                <label for="number">Total Number of Students</label>
+                <input type="number" id="number" name="number" value="25">
+            </div>
+            <div class="input-field col s12">
+                <select id="course" name="course">
+                    <option value="SE527">SE527</option>
+                    <option value="SE627">SE627</option>
+                    <option value="Other">Other</option>
+                </select>
+                <label for="course">Course Code</label>
+            </div>
+            <div class="input-field col s12">
+                <label for="year">Enrollment Year</label>
+                <input type="text" id="year" name="year" value="2019">
+            </div>
+            <div class="input-field col s12">
+                <label for="date">Date</label>
+                <input class="datepicker" type="text" id="date" name="date" value="{{ date }}">
+            </div>
+            <button type="submit" name="action">Next
+                <i>send</i>
+            </button>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
